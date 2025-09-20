@@ -1,0 +1,17 @@
+- id: "thomas"
+  name: "Thomas Francis"
+  age: 29
+  occupation: "Analyst, JPMorgan Asset Management"
+  base_city: "South Yarra, Melbourne"
+  traits: { extroversion: 8, loyalty_mates: 9, loyalty_romance: 4, competitiveness: 7, money_focus: 6, generosity: 3, honesty: 3, self_awareness: 6, econ_right: 6, social_prog: 7 }
+  drives: ["validation","success","connection","attention"]
+  holdings: { cash_usd: 12000, tokens: {}, equities_usd: 0 }
+
+- id: "jordy"
+  name: "Jordan Shreeve"
+  age: 29
+  occupation: "Founder, Inke Packaging"
+  base_city: "South Yarra, Melbourne"
+  traits: { extroversion: 6, loyalty_mates: 9, loyalty_romance: 7, competitiveness: 8, money_focus: 8, generosity: 7, honesty: 8, self_awareness: 7, econ_right: 7, social_prog: 6 }
+  drives: ["business_success","respect","family_stability"]
+  holdings: { cash_usd: 250000, tokens: {}, equities_usd: 0 }

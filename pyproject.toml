@@ -1,0 +1,9 @@
+[project]
+name = "living-world-sim"
+version = "0.1.0"
+description = "Text-only 5-year life simulation (Thomas & Jordan)"
+requires-python = ">=3.11"
+dependencies = ["pyyaml==6.0.2", "python-dateutil==2.9.0.post0", "pytz==2024.1"]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]

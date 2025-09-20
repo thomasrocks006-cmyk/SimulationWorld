@@ -1,0 +1,22 @@
+real_estate:
+  - owner_id: "thomas"
+    address: "South Yarra Apartment (fictional)"
+    value_aud: 600000
+    mortgage_aud: 400000
+  - owner_id: "jordy"
+    address: "South Yarra Apartment (fictional)"
+    value_aud: 1700000
+    mortgage_aud: 800000
+
+vehicles:
+  - owner_id: "jordy"
+    make_model: "Range Rover"
+    value_aud: 120000
+
+businesses:
+  - id: "inke"
+    name: "Inke Packaging"
+    sector: "E-commerce packaging/printing"
+    valuation_aud: 8000000
+    owner_id: "jordy"
+    stress_factor: 4.0
