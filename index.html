@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WorldSim</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Spectral:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="scanlines" aria-hidden="true"></div>
+    <main id="intro-screen" class="screen active" aria-labelledby="intro-title">
+      <div class="intro-card">
+        <div class="globe-wrapper" role="img" aria-label="WorldSim globe logo">
+          <svg class="globe" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <radialGradient id="ocean" cx="50%" cy="40%" r="70%">
+                <stop offset="0%" stop-color="#8dd4ff" />
+                <stop offset="100%" stop-color="#0a6bb7" />
+              </radialGradient>
+              <linearGradient id="shine" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="rgba(255,255,255,0.65)" />
+                <stop offset="40%" stop-color="rgba(255,255,255,0.05)" />
+                <stop offset="100%" stop-color="rgba(255,255,255,0)" />
+              </linearGradient>
+            </defs>
+            <circle cx="100" cy="100" r="92" fill="url(#ocean)" />
+            <path
+              class="continent"
+              d="M63 53c9-11 25-18 39-16 12 2 25 10 31 23 3 8 2 16-5 22-6 6-17 8-26 6-11-2-20-9-27-17-5-6-9-12-12-18z"
+            />
+            <path
+              class="continent"
+              d="M121 86c8-5 19-7 29-4 12 4 21 12 26 23 3 8 0 16-6 22-6 6-15 10-24 11-10 1-19-2-26-8-6-5-8-12-5-18 3-7 8-12 15-16z"
+            />
+            <path
+              class="continent"
+              d="M78 112c7-6 17-8 27-5 10 4 17 11 20 20 2 8-1 17-7 23-6 7-16 12-26 13-9 1-17-3-22-10-5-7-6-16-1-23 3-6 6-12 9-18z"
+            />
+            <path
+              class="continent"
+              d="M50 92c5-4 12-6 18-5 6 1 11 5 14 10 3 6 1 12-4 16-5 4-12 7-19 7-7-1-13-5-16-10-3-5-2-11 3-15 1-1 3-2 4-3z"
+            />
+            <circle cx="72" cy="62" r="4" fill="#b4e4ff" opacity="0.4" />
+            <circle cx="130" cy="128" r="3" fill="#b4e4ff" opacity="0.35" />
+            <path d="M25 100a75 75 0 0 1 150 0 75 75 0 0 1-150 0z" fill="url(#shine)" />
+          </svg>
+        </div>
+        <h1 id="intro-title" class="title">WorldSim</h1>
+        <p class="subtitle">Insert disk... establishing simulation uplink.</p>
+        <button id="continue-btn" class="primary-btn">Continue</button>
+        <p class="hint">Press Enter to continue</p>
+      </div>
+    </main>
+
+    <main id="main-menu" class="screen" aria-labelledby="menu-title">
+      <div class="menu-ambient" aria-hidden="true"></div>
+      <div class="menu-content">
+        <header class="menu-header">
+          <h1 id="menu-title">WorldSim</h1>
+          <p>Simulation Command Console</p>
+        </header>
+        <nav class="menu-options" aria-label="Main menu">
+          <button class="menu-button" data-open="new-sim">New Simulation</button>
+          <button class="menu-button" data-open="saved-sims">Saved Simulations</button>
+          <button class="menu-button" data-open="load-latest">Load Latest Sim</button>
+          <button class="menu-button" data-open="sandbox">Sandbox Mode</button>
+          <button class="menu-button" data-open="settings">Settings</button>
+          <button class="menu-button" data-open="credits">Credits</button>
+          <button class="menu-button" data-open="exit">Exit Program</button>
+        </nav>
+        <footer class="menu-footer">
+          <p>Tip: Forge civilizations, alter climates, script the story of your world.</p>
+        </footer>
+      </div>
+    </main>
+
+    <div
+      id="panel-container"
+      class="panel-overlay"
+      role="dialog"
+      aria-modal="true"
+      aria-hidden="true"
+    >
+      <div class="panel-shade" data-close aria-hidden="true"></div>
+      <div class="panel-wrapper">
+        <section class="panel" data-panel="new-sim" tabindex="-1">
+          <header class="panel-header">
+            <h2>Launch a New Simulation</h2>
+            <p>Pick a scenario to begin your next world-building expedition.</p>
+          </header>
+          <div class="scenario-card">
+            <div class="scenario-header">
+              <h3>WorldSim: Prime Timeline</h3>
+              <span class="badge">Featured</span>
+            </div>
+            <p>
+              Our flagship scenario featuring a living, breathing world with evolving climates,
+              cultures, and unexpected events.
+            </p>
+            <ul class="scenario-details">
+              <li>🌍 Balanced Earth-like biomes with adaptive ecosystems.</li>
+              <li>🧬 Procedural civilizations that learn, trade, and wage war.</li>
+              <li>⛈️ Dynamic weather, disasters, and celestial phenomena.</li>
+            </ul>
+            <div class="scenario-actions">
+              <button class="primary-btn" data-focus>Launch Scenario</button>
+              <button class="secondary-btn" data-close>Back to Menu</button>
+            </div>
+          </div>
+          <p class="coming-soon">More simulation archetypes arriving in future updates.</p>
+        </section>
+
+        <section class="panel" data-panel="saved-sims" tabindex="-1">
+          <header class="panel-header">
+            <h2>Saved Simulations</h2>
+            <p>Your archived worlds will appear here for quick deployment.</p>
+          </header>
+          <div class="empty-state">
+            <span class="empty-icon" aria-hidden="true">📁</span>
+            <p>No saved simulations detected.</p>
+            <p class="muted">
+              Start a new sim to create save points, or import saves from another terminal.
+            </p>
+          </div>
+          <button class="secondary-btn" data-close>Return to Menu</button>
+        </section>
+
+        <section class="panel" data-panel="load-latest" tabindex="-1">
+          <header class="panel-header">
+            <h2>Load Latest Simulation</h2>
+            <p>Resume exactly where you left off in your most recent session.</p>
+          </header>
+          <div class="log-entry">
+            <p class="muted">Last session: <strong>Pending</strong> — no previous run recorded.</p>
+            <p>
+              Once you have explored a world, the command console will list its timestamp and
+              summary here for instant relaunch.
+            </p>
+          </div>
+          <div class="panel-actions">
+            <button class="primary-btn" disabled>Load Latest</button>
+            <button class="secondary-btn" data-close>Return to Menu</button>
+          </div>
+        </section>
+
+        <section class="panel" data-panel="sandbox" tabindex="-1">
+          <header class="panel-header">
+            <h2>Sandbox Mode</h2>
+            <p>Craft a bespoke universe with fine-grained control over its parameters.</p>
+          </header>
+          <form class="sandbox-grid" action="#" method="dialog">
+            <label class="sandbox-field">
+              <span>Climate Profile</span>
+              <select>
+                <option>Temperate Baseline</option>
+                <option>Frozen Frontier</option>
+                <option>Equatorial Archipelago</option>
+                <option>Desert Expanse</option>
+              </select>
+            </label>
+            <label class="sandbox-field">
+              <span>Geological Activity</span>
+              <input type="range" min="0" max="10" value="6" />
+            </label>
+            <label class="sandbox-field">
+              <span>Population Seed</span>
+              <select>
+                <option>Nomadic Tribes</option>
+                <option>Settled Agrarians</option>
+                <option>Industrial Age</option>
+                <option>Post-Digital</option>
+              </select>
+            </label>
+            <label class="sandbox-field">
+              <span>Event Intensity</span>
+              <input type="range" min="0" max="10" value="4" />
+            </label>
+            <label class="sandbox-field">
+              <span>Tech Progression Speed</span>
+              <input type="range" min="0" max="10" value="5" />
+            </label>
+            <label class="sandbox-field">
+              <span>Custom Seed</span>
+              <input type="text" placeholder="Optional world seed" />
+            </label>
+          </form>
+          <div class="panel-actions">
+            <button class="primary-btn">Initialize Sandbox</button>
+            <button class="secondary-btn" data-close>Return to Menu</button>
+          </div>
+        </section>
+
+        <section class="panel" data-panel="settings" tabindex="-1">
+          <header class="panel-header">
+            <h2>Settings</h2>
+            <p>Tune the audiovisual fidelity of your command console.</p>
+          </header>
+          <div class="settings-list">
+            <label class="setting">
+              <span>Music Volume</span>
+              <input type="range" min="0" max="100" value="70" />
+            </label>
+            <label class="setting">
+              <span>Sound Effects</span>
+              <input type="range" min="0" max="100" value="80" />
+            </label>
+            <label class="setting">
+              <span>Brightness</span>
+              <input type="range" min="0" max="100" value="50" />
+            </label>
+            <label class="setting">
+              <span>Difficulty Preset</span>
+              <select>
+                <option>Explorer</option>
+                <option>Strategist</option>
+                <option>Mythic</option>
+              </select>
+            </label>
+            <label class="setting toggle">
+              <span>CRT Scanlines</span>
+              <input type="checkbox" checked />
+            </label>
+          </div>
+          <button class="secondary-btn" data-close>Return to Menu</button>
+        </section>
+
+        <section class="panel" data-panel="credits" tabindex="-1">
+          <header class="panel-header">
+            <h2>Credits</h2>
+            <p>A tribute to the explorers charting new worlds within WorldSim.</p>
+          </header>
+          <ul class="credits-list">
+            <li><strong>Creative Direction:</strong> You</li>
+            <li><strong>Lead Simulation Architect:</strong> Imagination Engine</li>
+            <li><strong>Historical Consultant:</strong> Alternate Timelines Guild</li>
+            <li><strong>Audio Engineering:</strong> Quantum Echo Chamber</li>
+          </ul>
+          <p class="muted">Inspired by the grand strategy classics of the disk-era frontier.</p>
+          <button class="secondary-btn" data-close>Return to Menu</button>
+        </section>
+
+        <section class="panel" data-panel="exit" tabindex="-1">
+          <header class="panel-header">
+            <h2>Exit WorldSim</h2>
+            <p>Prepare to power down the simulation console.</p>
+          </header>
+          <p>
+            Your progress will be saved once the primary scenarios are available. For now, feel free
+            to continue exploring or close this window when you're ready.
+          </p>
+          <div class="panel-actions">
+            <button class="primary-btn" disabled>Exit to Desktop</button>
+            <button class="secondary-btn" data-close>Return to Menu</button>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <script src="script.js" defer></script>
+  </body>
+</html>
