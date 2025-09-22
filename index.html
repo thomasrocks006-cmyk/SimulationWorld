@@ -13,6 +13,14 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
+    <audio
+      id="background-music"
+      src="audio/eclipsed-horizons.mp3"
+      preload="auto"
+      loop
+      hidden
+      aria-hidden="true"
+    ></audio>
     <div class="scanlines" aria-hidden="true"></div>
     <main id="intro-screen" class="screen active" aria-labelledby="intro-title">
       <div class="intro-card">
@@ -80,6 +88,145 @@
       </div>
     </main>
 
+    <main
+      id="simulation-launcher"
+      class="screen"
+      aria-live="polite"
+      aria-label="Simulation launch interface"
+    >
+      <section class="sim-stage active" data-stage="uplink">
+        <div class="uplink-console">
+          <div class="uplink-grid" aria-hidden="true"></div>
+          <header class="uplink-header">
+            <p class="uplink-topline">South Yarra Grid</p>
+            <h2>Orbital Scan Engaged</h2>
+            <p class="uplink-status" data-uplink-status>Triangulating orbital vector…</p>
+          </header>
+          <div class="uplink-progress" role="status">
+            <div class="progress-bar" aria-hidden="true">
+              <div class="progress-fill" data-progress-fill></div>
+            </div>
+            <span class="progress-value" data-progress-value>0%</span>
+          </div>
+          <div class="uplink-readout">
+            <p class="uplink-line">Command uplink confirmed…</p>
+            <p class="uplink-line">Tracking residents: Thomas &amp; Jordan…</p>
+            <p class="uplink-line">Deploying ground-level telemetry…</p>
+          </div>
+          <ul class="uplink-telemetry" aria-label="Simulation telemetry">
+            <li><span>Orbital vector</span><span data-telemetry-scan>Queued</span></li>
+            <li><span>Population lock</span><span data-telemetry-pop>Pending</span></li>
+            <li><span>Systems mesh</span><span data-telemetry-eco>Standby</span></li>
+            <li><span>Narrative packets</span><span data-telemetry-events>Idle</span></li>
+          </ul>
+          <p class="uplink-hint">Hold steady while we align the satellite sweep.</p>
+        </div>
+      </section>
+
+      <section class="sim-stage" data-stage="globe" aria-hidden="true">
+        <div class="orbital-stage">
+          <div class="orbital-sky" aria-hidden="true"></div>
+          <div class="orbital-glow" aria-hidden="true"></div>
+          <div class="radar-shell">
+            <div class="radar-ring ring-outer" aria-hidden="true"></div>
+            <div class="radar-ring ring-middle" aria-hidden="true"></div>
+            <div class="radar-ring ring-inner" aria-hidden="true"></div>
+            <div class="radar-sweep" aria-hidden="true"></div>
+            <div class="radar-map" aria-hidden="true">
+              <div class="map-aus"></div>
+              <div class="map-vic"></div>
+              <div class="map-melb"></div>
+            </div>
+            <div class="radar-pulse" aria-hidden="true"></div>
+          </div>
+          <div class="orbital-caption">
+            <p class="orbital-step">Satellite Sweep Inbound</p>
+            <p class="orbital-detail" data-globe-detail>Thermal sweep over Melbourne grid…</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="sim-stage" data-stage="arrival" aria-hidden="true">
+        <div class="arrival-shell">
+          <div class="arrival-hero">
+            <div class="arrival-horizon" aria-hidden="true"></div>
+            <div class="arrival-overlay" aria-hidden="true"></div>
+            <div class="arrival-map" aria-hidden="true">
+              <div class="map-trace river"></div>
+              <div class="map-trace chapel"></div>
+            </div>
+            <div class="arrival-copy">
+              <p class="arrival-kicker">Groundside brief</p>
+              <h2>Welcome to South Yarra</h2>
+              <p class="arrival-text">
+                Simulation Day 1. Trams hum, cafés spark to life, and Thomas &amp; Jordan take their
+                marks. All telemetry channels are synced—analysis feeds ready for command input.
+              </p>
+            </div>
+          </div>
+          <div class="arrival-grid">
+            <article class="arrival-card">
+              <h3>Simulation Pulse</h3>
+              <ul>
+                <li><strong>Forecast:</strong> 18&deg;C, late afternoon showers</li>
+                <li><strong>Notables:</strong> Chapel Street traders, Burnley commuters</li>
+                <li><strong>Focus:</strong> Finance stress vs. creative breakthroughs</li>
+              </ul>
+            </article>
+            <article class="arrival-card">
+              <h3>Neighborhood Signals</h3>
+              <div class="chips" role="list" aria-label="Signal filters">
+                <span class="chip" role="listitem">Transport</span>
+                <span class="chip" role="listitem">Commerce</span>
+                <span class="chip" role="listitem">Civic</span>
+                <span class="chip" role="listitem">Night</span>
+              </div>
+              <ul class="mini-bars" aria-label="Neighborhood activity">
+                <li><span>Tram frequency</span> <span aria-hidden="true">██████░░</span></li>
+                <li><span>Retail footfall</span> <span aria-hidden="true">█████░░░</span></li>
+                <li><span>Event chatter</span> <span aria-hidden="true">███████░</span></li>
+              </ul>
+            </article>
+            <article class="arrival-card">
+              <h3>Next Actions</h3>
+              <ul>
+                <li>Review agent dossiers for Thomas and Jordan</li>
+                <li>Queue economic events &amp; family dynamics</li>
+                <li>Dispatch first-day narrative briefings</li>
+              </ul>
+            </article>
+          </div>
+          <div class="arrival-status" aria-live="polite">
+            <p class="arrival-status-label">Mission Log</p>
+            <p class="arrival-status-value" data-launch-status>Awaiting command uplink…</p>
+          </div>
+          <div class="arrival-modes" role="group" aria-label="Simulation mode presets">
+            <button class="mode-tile active" data-mode="narrative">
+              <span class="mode-title">Narrative</span>
+              <span class="mode-copy">Cinematic stories, character arcs, day-by-day flow.</span>
+            </button>
+            <button class="mode-tile" data-mode="finance">
+              <span class="mode-title">Finance</span>
+              <span class="mode-copy">Capital movements, net worth, and risk markers.</span>
+            </button>
+            <button class="mode-tile" data-mode="social">
+              <span class="mode-title">Social</span>
+              <span class="mode-copy">Relationships, loyalties, and pivotal interactions.</span>
+            </button>
+            <button class="mode-tile" data-mode="sandbox">
+              <span class="mode-title">Sandbox</span>
+              <span class="mode-copy">Custom seeds, rapid iteration, freeform outcomes.</span>
+            </button>
+          </div>
+          <div class="arrival-actions">
+            <button class="primary-btn" data-enter-sim>Enter Command Hub</button>
+            <button class="secondary-btn" data-return-menu>Return to Menu</button>
+            <button class="ghost-btn" data-replay-sweep>Replay Satellite Sweep</button>
+          </div>
+        </div>
+      </section>
+    </main>
+
     <div
       id="panel-container"
       class="panel-overlay"
@@ -109,7 +256,7 @@
               <li>⛈️ Dynamic weather, disasters, and celestial phenomena.</li>
             </ul>
             <div class="scenario-actions">
-              <button class="primary-btn" data-focus>Launch Scenario</button>
+              <button class="primary-btn" data-focus data-stop-music="launch-scenario">Launch Scenario</button>
               <button class="secondary-btn" data-close>Back to Menu</button>
             </div>
           </div>
@@ -144,7 +291,7 @@
             </p>
           </div>
           <div class="panel-actions">
-            <button class="primary-btn" disabled>Load Latest</button>
+            <button class="primary-btn" data-stop-music="load-latest" disabled>Load Latest</button>
             <button class="secondary-btn" data-close>Return to Menu</button>
           </div>
         </section>
@@ -191,7 +338,7 @@
             </label>
           </form>
           <div class="panel-actions">
-            <button class="primary-btn">Initialize Sandbox</button>
+            <button class="primary-btn" data-stop-music="initialize-sandbox">Initialize Sandbox</button>
             <button class="secondary-btn" data-close>Return to Menu</button>
           </div>
         </section>
@@ -204,7 +351,14 @@
           <div class="settings-list">
             <label class="setting">
               <span>Music Volume</span>
-              <input type="range" min="0" max="100" value="70" />
+              <input
+                type="range"
+                min="0"
+                max="100"
+                value="70"
+                data-setting="music-volume"
+                aria-label="Music volume"
+              />
             </label>
             <label class="setting">
               <span>Sound Effects</span>
@@ -255,7 +409,7 @@
             to continue exploring or close this window when you're ready.
           </p>
           <div class="panel-actions">
-            <button class="primary-btn" disabled>Exit to Desktop</button>
+            <button class="primary-btn" data-stop-music="exit" disabled>Exit to Desktop</button>
             <button class="secondary-btn" data-close>Return to Menu</button>
           </div>
         </section>
