@@ -9,3 +9,7 @@ fast:
 
 test:
 	pytest -q
+	npx playwright test
+
+test-ui:
+	npx playwright test

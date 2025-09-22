@@ -1,0 +1,19 @@
+{
+  "name": "simulationworld",
+  "version": "1.0.0",
+  "description": "This repo contains a Python CLI that simulates the lives of Thomas Francis and Jordan Shreeve across five years (2025-09-20 -> 2030-09-20). The run is deterministic: all random choices are driven by a seeded RNG so repeated runs with the same inputs produce identical narratives and finance outputs.",
+  "main": "script.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "playwright test",
+    "test:ui": "playwright test"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.55.0"
+  }
+}

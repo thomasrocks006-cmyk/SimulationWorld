@@ -1,0 +1,31 @@
+<section class="stage" data-stage="uplink" aria-label="Uplink Console" aria-hidden="true">
+  <div class="uplink">
+    <header>
+  <p class="kicker">South Yarra Grid</p>
+      <h2>Orbital Scan Engaged</h2>
+      <p class="status" data-uplink-status>Triangulating orbital vector…</p>
+    </header>
+    <div class="comms" aria-hidden="true">
+      <div class="vignette"></div>
+      <div class="wave"></div>
+      <div class="packets" data-uplink-packets></div>
+      <div class="bars" aria-label="Signal Strength">
+        <span class="b1"></span>
+        <span class="b2"></span>
+        <span class="b3"></span>
+        <span class="b4"></span>
+      </div>
+    </div>
+    <div class="progress">
+      <div class="bar"><div class="fill" data-uplink-fill></div></div>
+      <span class="value" data-uplink-val>0%</span>
+    </div>
+    <ul class="telemetry-list">
+      <li><span>Orbital vector</span><span data-telemetry-scan>Queued</span></li>
+      <li><span>Population lock</span><span data-telemetry-pop>Pending</span></li>
+      <li><span>Systems mesh</span><span data-telemetry-eco>Standby</span></li>
+      <li><span>Narrative packets</span><span data-telemetry-events>Idle</span></li>
+    </ul>
+    <p class="hint">Hold steady while we align the satellite sweep.</p>
+  </div>
+</section>

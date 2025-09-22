@@ -10,6 +10,7 @@ class RNG:
     """Thin wrapper around random.Random for deterministic runs."""
 
     def __init__(self, seed: int) -> None:
+        self.seed = seed
         self._random = random.Random(seed)
 
     def random(self) -> float:

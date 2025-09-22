@@ -1,0 +1,27 @@
+INFO:     Will watch for changes in these directories: ['/workspaces/SimulationWorld']
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+INFO:     Started reloader process [43171] using WatchFiles
+127.0.0.1 - - [22/Sep/2025 03:39:29] "GET /?id=04e62964-41f4-4452-a738-488c500ba553&vscodeBrowserReqId=1758512367969 HTTP/1.1" 200 -
+127.0.0.1 - - [22/Sep/2025 03:39:29] "GET /audio/eclipsed-horizons.mp3 HTTP/1.1" 304 -
+127.0.0.1 - - [22/Sep/2025 03:39:30] "GET /script.js HTTP/1.1" 200 -
+INFO:     Started server process [43192]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     127.0.0.1:60324 - "GET /?id=04e62964-41f4-4452-a738-488c500ba553&vscodeBrowserReqId=1758512372443 HTTP/1.1" 404 Not Found
+127.0.0.1 - - [22/Sep/2025 03:39:53] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [22/Sep/2025 03:39:53] "GET /audio/eclipsed-horizons.mp3 HTTP/1.1" 304 -
+127.0.0.1 - - [22/Sep/2025 03:39:53] "GET /script.js HTTP/1.1" 200 -
+127.0.0.1 - - [22/Sep/2025 03:39:57] code 404, message File not found
+127.0.0.1 - - [22/Sep/2025 03:39:57] "GET /favicon.ico HTTP/1.1" 404 -
+127.0.0.1 - - [22/Sep/2025 03:41:13] code 501, message Unsupported method ('POST')
+127.0.0.1 - - [22/Sep/2025 03:41:13] "POST /api/simulations/launch HTTP/1.1" 501 -
+127.0.0.1 - - [22/Sep/2025 03:57:07] code 404, message File not found
+127.0.0.1 - - [22/Sep/2025 03:57:07] "GET /favicon.ico HTTP/1.1" 404 -
+127.0.0.1 - - [22/Sep/2025 04:57:43] code 404, message File not found
+127.0.0.1 - - [22/Sep/2025 04:57:43] "GET /favicon.ico HTTP/1.1" 404 -
+127.0.0.1 - - [22/Sep/2025 04:57:58] code 501, message Unsupported method ('POST')
+127.0.0.1 - - [22/Sep/2025 04:57:58] "POST /api/simulations/launch HTTP/1.1" 501 -
+127.0.0.1 - - [22/Sep/2025 05:12:20] code 404, message File not found
+127.0.0.1 - - [22/Sep/2025 05:12:20] "GET /favicon.ico HTTP/1.1" 404 -
+127.0.0.1 - - [22/Sep/2025 05:38:40] code 501, message Unsupported method ('POST')
+127.0.0.1 - - [22/Sep/2025 05:38:40] "POST /api/simulations/launch HTTP/1.1" 501 -

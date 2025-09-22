@@ -10,7 +10,7 @@ from sim.output.render import DailyRenderer
 
 
 class EventCallable(Protocol):
-    def __call__(self) -> str | None:
+    def __call__(self, renderer: DailyRenderer) -> None:
         ...
 
 
@@ -22,6 +22,4 @@ def run_scripted_events(
     renderer: DailyRenderer,
 ) -> None:
     for event in special.scripted_events(day, state=state, rng=rng):
-        message = event()
-        if message:
-            renderer.log(message)
+        event(renderer)

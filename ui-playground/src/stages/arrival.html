@@ -1,0 +1,74 @@
+<section class="stage" data-stage="arrival" aria-label="Arrival" aria-hidden="true">
+  <div class="arrival">
+    <div class="hero">
+      <div class="horizon"></div>
+      <div class="overlay"></div>
+      <div class="map">
+        <div class="trace river"></div>
+        <div class="trace chapel"></div>
+        <div class="trace toorak"></div>
+        
+        <div class="tram" aria-hidden="true"></div>
+      </div>
+      <div class="copy">
+        <p class="kicker">Groundside brief</p>
+        <h2>Welcome to South Yarra</h2>
+        <p>Simulation Day 1. Trams hum, cafés spark to life... telemetry synced.</p>
+        <div class="stats">
+          <span class="badge">Scenario: Prime Timeline</span>
+          <span class="badge">Mode: <span data-arrival-mode>narrative</span></span>
+          <span class="badge">Weather: 18°C, late showers</span>
+        </div>
+      </div>
+    </div>
+    <div class="grid">
+      <article class="card kpis" data-kpis>
+        <h3>Simulation Pulse</h3>
+        <ul>
+          <li><strong>Forecast:</strong> 18°C, late showers</li>
+          <li><strong>Population Index:</strong> <span data-kpi-pop>68</span></li>
+          <li><strong>Tram Headway (min):</strong> <span data-kpi-tram>5.3</span></li>
+          <li><strong>Retail Sentiment:</strong> <span data-kpi-sent>+3.1</span></li>
+          <li><strong>Foot Traffic:</strong> <span data-kpi-foot>1.2k</span></li>
+        </ul>
+        <div class="sparkline" data-kpi-spark></div>
+        <div class="kpi-actions"><button class="ghost small" data-kpi-live>Live</button></div>
+      </article>
+      <article class="card">
+        <h3>Next Actions</h3>
+        <ul>
+          <li>Review agent dossiers</li>
+          <li>Queue economic events</li>
+          <li>Dispatch narrative briefings</li>
+        </ul>
+      </article>
+      <article class="card signals">
+        <h3>Neighborhood Signals</h3>
+        <div class="chips" data-signal-chips>
+          <button class="chip" data-signal="chapel-footfall">Chapel Footfall</button>
+          <button class="chip" data-signal="yarra-traffic">Yarra Traffic</button>
+          <button class="chip" data-signal="retail-sentiment">Retail Sentiment</button>
+          <button class="chip" data-signal="cafe-occupancy">Café Occupancy</button>
+        </div>
+        <div class="mini-bars" data-signal-bars></div>
+      </article>
+      <article class="card activity">
+        <h3>Activity Feed</h3>
+        <ul class="feed" data-activity-feed>
+          <li><span class="time">07:10</span> Café row wakes along Chapel — line forming at Neds.</li>
+          <li><span class="time">07:22</span> 72/78 tram clusters stabilizing; southbound headways normalize.</li>
+        </ul>
+      </article>
+    </div>
+    <div class="modes" role="group" aria-label="Mode presets">
+      <button class="tile active" data-mode="narrative">Narrative</button>
+      <button class="tile" data-mode="finance">Finance</button>
+      <button class="tile" data-mode="social">Social</button>
+      <button class="tile" data-mode="sandbox">Sandbox</button>
+    </div>
+    <div class="actions">
+      <button class="primary" data-enter-hub>Enter Command Hub</button>
+      <button class="secondary" data-replay>Replay Sweep</button>
+    </div>
+  </div>
+</section>

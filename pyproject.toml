@@ -3,7 +3,19 @@ name = "living-world-sim"
 version = "0.1.0"
 description = "Text-only 5-year life simulation (Thomas & Jordan)"
 requires-python = ">=3.11"
-dependencies = ["pyyaml==6.0.2", "python-dateutil==2.9.0.post0", "pytz==2024.1"]
+dependencies = [
+    "pyyaml==6.0.2",
+    "python-dateutil==2.9.0.post0",
+    "pytz==2024.1",
+    "fastapi==0.111.1",
+    "uvicorn[standard]==0.30.1",
+    "sqlalchemy==2.0.31",
+    "psycopg2-binary==2.9.9",
+    "pgvector==0.2.5",
+    "apscheduler==3.10.4",
+    "tenacity==8.3.0",
+    "httpx==0.27.0",
+]
 
 [tool.pytest.ini_options]
 pythonpath = ["."]

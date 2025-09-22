@@ -1,9 +1,33 @@
 {
+  "$schema": "vscode://schemas/tasks",
   "version": "2.0.0",
   "tasks": [
     { "label": "Install deps", "type": "shell", "command": "pip install -r requirements.txt" },
     { "label": "Run (daily)", "type": "shell", "command": "python cli.py run --start 2025-09-20 --until 2030-09-20" },
     { "label": "Run (weekly, fast)", "type": "shell", "command": "python cli.py run --start 2025-09-20 --step week --fast" },
-    { "label": "Tests", "type": "shell", "command": "pytest -q" }
+    { "label": "Tests", "type": "shell", "command": "pytest -q" },
+    { "label": "Quick Preview (3 days)", "type": "shell", "command": "python cli.py run --start 2025-09-20 --until 2025-09-23" },
+    { "label": "Month Preview (30 days)", "type": "shell", "command": "python cli.py run --start 2025-09-20 --until 2025-10-20" },
+    { "label": "Interactive Demo", "type": "shell", "command": "python cli.py run --start 2025-09-20 --until 2025-09-25 --interactive" },
+    {
+      "label": "UI Playground: Dev",
+      "type": "shell",
+      "command": "npm",
+      "args": ["run", "dev"],
+      "options": { "cwd": "${workspaceFolder}/ui-playground" },
+      "isBackground": true,
+      "problemMatcher": [
+        {
+          "owner": "custom",
+          "fileLocation": ["relative", "${workspaceFolder}"],
+          "pattern": { "regexp": ".*", "file": 1, "location": 2, "message": 3 },
+          "background": {
+            "activeOnStart": true,
+            "beginsPattern": ".*Local:\\s*http://.*:5173/.*",
+            "endsPattern": ".*ready in .*"
+          }
+        }
+      ]
+    }
   ]
 }

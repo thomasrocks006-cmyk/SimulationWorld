@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WorldSim Command Hub</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Spectral:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body data-page="command">
+    <div class="scanlines" aria-hidden="true"></div>
+    <main id="command-hub" class="command-screen" aria-labelledby="command-title">
+      <header class="command-header">
+        <div class="command-title-block">
+          <h1 id="command-title">WorldSim Command Hub</h1>
+          <p class="command-subtitle" data-command-message>
+            Monitoring orbital uplinks and simulation runs for the South Yarra timeline.
+          </p>
+        </div>
+        <div class="command-actions">
+          <button class="ghost-btn" data-command-menu>Return to Launch Bay</button>
+        </div>
+      </header>
+
+      <section class="command-status" aria-label="Active simulation status">
+        <div class="status-card">
+          <div class="status-heading">
+            <h2>Active Run</h2>
+            <span class="status-pill" data-command-status>Awaiting launch</span>
+          </div>
+          <dl class="status-grid">
+            <div>
+              <dt>Scenario</dt>
+              <dd data-command-scenario>—</dd>
+            </div>
+            <div>
+              <dt>Mode</dt>
+              <dd data-command-mode>—</dd>
+            </div>
+            <div>
+              <dt>Submitted</dt>
+              <dd data-command-submitted>—</dd>
+            </div>
+            <div>
+              <dt>Started</dt>
+              <dd data-command-started>—</dd>
+            </div>
+            <div>
+              <dt>Finished</dt>
+              <dd data-command-finished>—</dd>
+            </div>
+            <div>
+              <dt>Duration</dt>
+              <dd data-command-duration>—</dd>
+            </div>
+          </dl>
+          <p class="status-message" data-command-message-detail>Launch a run to begin telemetry.</p>
+          <div class="status-meta" data-command-meta></div>
+        </div>
+        <div class="status-controls">
+          <button class="primary-btn" data-command-launch>Launch Fresh Run</button>
+          <button class="secondary-btn" data-command-refresh>Refresh Telemetry</button>
+          <button class="ghost-btn" data-command-stop disabled>Stop Polling</button>
+        </div>
+      </section>
+
+      <section class="command-history" aria-label="Recent simulation runs">
+        <header class="section-header">
+          <h2>Recent Runs</h2>
+          <button class="ghost-btn small" data-command-history-refresh>Reload</button>
+        </header>
+        <div class="history-empty" data-command-history-empty hidden>
+          Launch a simulation to populate the mission log.
+        </div>
+        <div class="history-list" data-command-history></div>
+      </section>
+
+      <section class="command-log" aria-label="Telemetry feed">
+        <header class="section-header">
+          <h2>Telemetry Feed</h2>
+          <button class="ghost-btn small" data-command-log-clear>Clear</button>
+        </header>
+        <div class="telemetry-log" data-command-log>
+          <p class="telemetry-placeholder">Telemetry lines will appear here once a run is active.</p>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js" defer></script>
+  </body>
+</html>

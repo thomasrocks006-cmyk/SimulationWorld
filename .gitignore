@@ -2,3 +2,5 @@ __pycache__/
 *.pyc
 .env
 .sim_logs/
+.sim_saves/
+output/

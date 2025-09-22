@@ -1,0 +1,42 @@
+<section class="stage" data-stage="globe" aria-label="Orbital Sweep" aria-hidden="true">
+  <div class="globe">
+    <div class="vignette" aria-hidden="true"></div>
+    <div class="sky" aria-hidden="true"></div>
+    <div class="glow" aria-hidden="true"></div>
+    <div class="mesh" aria-hidden="true"></div>
+    <div class="radar">
+      <div class="ring outer"></div>
+      <div class="ring middle"></div>
+      <div class="ring inner"></div>
+  <div class="scan-ring" aria-hidden="true"></div>
+      <div class="sweep"></div>
+      <div class="lights" aria-hidden="true"></div>
+      <div class="contours" aria-hidden="true"></div>
+      <div class="markers" data-markers></div>
+      <div class="map">
+        <svg class="melb-svg" viewBox="0 0 200 200" aria-hidden="true" focusable="false">
+          <!-- Abstract Melbourne overlay: river curve + CBD outline -->
+          <defs>
+            <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+              <feGaussianBlur stdDeviation="1.2" result="b" />
+              <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
+          </defs>
+          <!-- Yarra river abstract curve -->
+          <path class="yarra" d="M 20 120 C 60 110, 90 140, 120 135 C 150 130, 165 115, 185 120" />
+          <!-- CBD simplified rectangle and a few grid lines -->
+          <rect class="cbd" x="85" y="80" width="28" height="28" rx="2" ry="2" />
+          <path class="grid" d="M 85 89 H 113 M 85 98 H 113 M 85 107 H 113 M 94 80 V 108 M 103 80 V 108" />
+        </svg>
+        <div class="aus"></div><div class="vic"></div><div class="melb"></div>
+      </div>
+      <div class="beacon" data-beacon></div>
+    </div>
+    <div class="grain" aria-hidden="true"></div>
+    <div class="caption" aria-live="polite">
+      <p class="step">Satellite Sweep Inbound</p>
+      <p class="detail" data-globe-detail>Thermal sweep over Melbourne grid…</p>
+    </div>
+  </div>
+  
+</section>
